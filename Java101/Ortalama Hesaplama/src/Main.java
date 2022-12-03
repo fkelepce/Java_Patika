@@ -1,37 +1,21 @@
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        int k;
+        double avarage=0, count=0, total=0;
 
-        // Değişkenleri oluşturalım.
-        int mat, fizik, kimya, turkce, tarih, muzik;
+        Scanner input = new Scanner(System.in);
+        System.out.print("3'e ve 4'e bölen sayıların ortalamasını alacağımız değeri girin: ");
+        k = input.nextInt();
 
-        Scanner inp = new Scanner(System.in);
-        System.out.print("Matematik Notunuz: ");
-        mat = inp.nextInt();
-
-        System.out.print("Fizik Notunuz: ");
-        fizik = inp.nextInt();
-
-        System.out.print("Kimya Notunuz: ");
-        kimya = inp.nextInt();
-
-        System.out.print("Türkçe Notunuz: ");
-        turkce = inp.nextInt();
-
-        System.out.print("Tarih Notunuz: ");
-        tarih = inp.nextInt();
-
-        System.out.print("Müzik Notunuz: ");
-        muzik = inp.nextInt();
-
-        int toplam = ( mat + fizik + kimya + turkce + tarih + muzik );
-        double sonuc = toplam / 6 ;
-        System.out.println("Ortalamanız : " + sonuc);
-
-        Boolean kontrol = sonuc >= 60;
-        String str = kontrol ? "Geçtiniz" : " Kaldınız";
-        System.out.print(str) ;
-
-
+        for ( int i=1; i <= k; i++){
+            if ( (i % 3 == 0) && ( i % 4 == 0) ) {
+                count ++;
+                total = total + i;
+            }
+        }
+        avarage = total / count;
+        System.out.println( "Ortalama Değer: " + avarage);
     }
 }
